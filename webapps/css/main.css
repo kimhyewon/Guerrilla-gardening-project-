@@ -1,0 +1,34 @@
+@CHARSET "UTF-8";
+body {
+	font-family: "SupriaSans-Heavy", "wSDGothicNeo1H", "AppleSDGothicNeo-Heavy", "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  word-spacing: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+  letter-spacing: -0.25px;
+}
+
+#main_container {
+	position: absolute;
+	width: 100%;
+}
+
+
+#background_img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#background_img img {
+	1width: 95%;
+	height: 600px;
+	1overflow: hidden;
+	1margin: 0px auto;
+}
+
+#main_title {
+	position: relative;
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
