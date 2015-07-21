@@ -50,7 +50,7 @@ public class ArticleController {
 		articleService.insertArticle(article);
 		return new ModelAndView("redirect:/article/"+article.getId());
 	}
-
+	
 	// article 수정 form 보내주기
 	@RequestMapping(value = "/update/{articleId}", method = RequestMethod.GET)
 	public String updateGet(Model model, @PathVariable("articleId") String articleId, HttpSession session) {

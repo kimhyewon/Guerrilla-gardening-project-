@@ -30,91 +30,23 @@
 				</div>
 			</div>
 
+			<div id ="go_to_write"><a href="/write">글 쓰러 가기</a></div>
+
 			<div id="theGrid" class="main">
 				<section class="grid">
-					<!-- <c:forEach var="product" items="${products}">
-						<div class = "product col s5 m3 l3">
-							<a href="/shop/${shop.url}/product/${product.id}">
-							<img src="${product.imgUrl}" style="width:100%; height=100%;">
-							
-							<div class="product_text_con">
-								<div class="product_text">${product.name}</div>
-								<div class="price">${product.price}원</div>
+					<c:forEach var="article" items="${articles}">
+						<a class="grid__item" href="#">
+							<h2 class="title title--preview"></h2>
+							<div class="loader"></div>
+
+							<div class="grid_img" style="background-image: url('${article.afterImg}');"></div>
+
+							<div class="meta meta--preview">
+								<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
+								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 모집중</span>
 							</div>
-							</a>
-						</div>
-					</c:forEach> -->
-
-
-
-					<a class="grid__item" href="#">
-						<h2 class="title title--preview"></h2>
-						<div class="loader"></div>
-
-						<div class="grid_img">
-							<!-- <img src ="http://i.imgur.com/f5IpKxe.png"> -->
-						</div>
-
-						<!-- <span class="category">Stories for humans</span> -->
-						<div class="meta meta--preview">
-							<!-- <img class="meta__avatar" src="img/authors/1.png" alt="author01" />  -->
-							<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>
-							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 모집중</span>
-						</div>
-					</a>
-					<a class="grid__item" href="#">
-						<h2 class="title title--preview"></h2>
-						<div class="loader"></div>
-
-						<div class="grid_img2">
-						</div>
-
-						<div class="meta meta--preview">
-							<span class="meta__date"><i class="fa fa-calendar-o"></i> 7 Apr</span>
-							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 마감</span>
-						</div>
-					</a>
-					<a class="grid__item" href="#">
-						<h2 class="title title--preview"></h2>
-						<div class="loader"></div>
-						<span class="category">Nutrition</span>
-						<div class="meta meta--preview">
-							<img class="meta__avatar" src="img/authors/3.png" alt="author03" /> 
-							<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
-							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
-						</div>
-					</a>
-					<a class="grid__item" href="#">
-						<h2 class="title title--preview">Hope for Amy Walters</h2>
-						<div class="loader"></div>
-						<span class="category">Life &amp; Death</span>
-						<div class="meta meta--preview">
-							<img class="meta__avatar" src="img/authors/4.png" alt="author04" /> 
-							<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
-							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
-						</div>
-					</a>
-					<a class="grid__item" href="#">
-						<h2 class="title title--preview">My Father told me...</h2>
-						<div class="loader"></div>
-						<span class="category">Nature vs. Nurture</span>
-						<div class="meta meta--preview">
-							<img class="meta__avatar" src="img/authors/5.png" alt="author05" /> 
-							<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
-							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
-						</div>
-					</a>
-					<a class="grid__item" href="#">
-						<h2 class="title title--preview">What Happens in the Brain?</h2>
-						<div class="loader"></div>
-						<span class="category">Neuroscience</span>
-						<div class="meta meta--preview">
-							<img class="meta__avatar" src="img/authors/6.png" alt="author06" /> 
-							<span class="meta__date"><i class="fa fa-calendar-o"></i> 6 Apr</span>
-							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 2 min read</span>
-						</div>
-					</a>
-					
+						</a>
+					</c:forEach>
 
 					<footer class="page-meta">
 						<span>Load more...</span>
@@ -124,8 +56,9 @@
 
 				
 			</div>
-		</div><!-- /container -->
+		</div><!-- 
 		<script src="js/classie.js"></script>
 		<script src="js/main.js"></script>
+		-->
 </body>
 </html>
