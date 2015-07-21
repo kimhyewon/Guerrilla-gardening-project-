@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 import core.exception.InsertTargetRecordNotFoundException;
 
 @Controller
-@RequestMapping(value = "/article")
 public class ArticleController {
 	@Autowired private ArticleService articleService;
 	
@@ -42,7 +41,7 @@ public class ArticleController {
 		String userId = (String) session.getAttribute("userId");
 
 		
-		return "boardForm";
+		return "articleForm";
 	}
 
 	// article create form에서 정보 받아오기
