@@ -8,16 +8,16 @@
 		<div id = "article_title"><input type="text" name="title" placeholder="제목을 입력하세요."/></div>
 		<div id = "address"><input type="text" name="address" placeholder="주소를 입력하세요."/></div>
 		<div id = "recruit_count">
-			<table id="select_recruit_count">
+			<!-- <table id="select_recruit_count">
 			    <tr>
 			    	<td style="padding-left:0px; border: 1px solid #bcbcbc;"><button id ="down_button" name="title" style="height:24px;width:23px;text-align:center;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;background-color:white;color:#CFCFCF">-</button></td>
-					<td style="padding-left:0px; border: 1px solid #bcbcbc;"><input id="recruitCount" type="text" value="1" style="width:23px;text-align:center;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px"/></td>
+					<td style="padding-left:0px; border: 1px solid #bcbcbc;"><input id="recruitCount"name="recruitCount" type="text" value="1" style="width:23px;text-align:center;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px"/></td>
 					<td style="padding-left:0px; border: 1px solid #bcbcbc;"><button id = "up_button" style="width:23px;text-align:center;border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;background-color:white;color:#CFCFCF;">+</button></td>
 				</tr>
-			</table>
+			</table> -->
 		</div>
-		<input type="file" name="beforeImg" >
-		<input type="file" name="afterImg" >
+		<input type="file" name="beforeImg" />
+		<input type="file" name="afterImg" />
 		<div id = "article_content"><textarea name="content" placeholder="내용을 입력하세요." /></textarea></div>
 		<!-- <div id = "recruit_count">
 			<select>
@@ -53,8 +53,8 @@
 			  	<option value="30">30</option>
 			</select> -->
 		</div>
-		<input type="hidden" name="userId" value="${user.userId}" />
-		<input type="hidden" name="id" value="${article.id}" />
+		<!-- <input type="hidden" name="userId" value="${article.userId}" /> -->
+		<!-- <input type="hidden" name="id" value="${article.id}" /> -->
 		<div id = "submit_button" class="row"><input type="submit" name="submit" value="확인" /></div>
 	</form>
 		

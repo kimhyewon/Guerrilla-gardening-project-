@@ -16,8 +16,8 @@ public class ArticleDao {
 	private JdbcTemplate jdbcTemplate;
 
 	public void insert(final Article article) {
-		String sql = "insert into ARTICLE values(null, ?, ?, ?, ?, ?, ?, ?, ?, null)";
-		jdbcTemplate.update(sql, article.getUserId(), article.getTitle(), article.getContent(), article.getBeforeImg(), article.getAfterImg(), article.getAddress(), article.getNowCount(), article.getRecruitCount());
+		String sql = "insert into ARTICLE values(null, ?, ?, ?, ?, ?, ?, null, ?, null)";
+		jdbcTemplate.update(sql, "user1", article.getTitle(), article.getContent(), article.getBeforeImg(), article.getAfterImg(), article.getAddress(), article.getRecruitCount());
 	}
 
 	public Article selectByPk(int articleId) {

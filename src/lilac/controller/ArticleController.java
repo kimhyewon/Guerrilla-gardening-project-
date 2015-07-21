@@ -28,10 +28,10 @@ public class ArticleController {
 	public String listGet(Model model, @PathVariable("articleId") String articleId, HttpSession session) {
 		String userId = (String) session.getAttribute("userId");
 		Article article = articleService.getArticle(Integer.parseInt(articleId));
-		List<ArticleComment> comments = articleService.getComments(article.getId());
+//		List<ArticleComment> comments = articleService.getComments(article.getId());
 		
 		model.addAttribute("article", article);
-		model.addAttribute("comments", comments);
+//		model.addAttribute("comments", comments);
 		return "showArticle";
 	}
 	
@@ -39,7 +39,11 @@ public class ArticleController {
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public String wirteGet(Model model, HttpSession session) {
 		String userId = (String) session.getAttribute("userId");
-
+//		Article article = articleService.getArticle(Integer.parseInt(articleId));
+		
+//		model.addAttribute("article", article);
+		model.addAttribute("user", userId);
+		
 		
 		return "articleForm";
 	}
@@ -48,7 +52,7 @@ public class ArticleController {
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public ModelAndView writePost(Article article, HttpSession session, Model model) {
 		articleService.insertArticle(article);
-		return new ModelAndView("redirect:/article/"+article.getId());
+		return new ModelAndView("redirect:/"+article.getId());
 	}
 	
 	// article 수정 form 보내주기
