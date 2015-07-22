@@ -25,7 +25,6 @@ pageContext.setAttribute("lf", "\n");
 			<tr>
 				<div id = "show_article_content">${fn:replace(article.content, lf, "<br/>")}</div>
 			</tr>
-			<input type="hidden" name="boardId" value="${boardId}" />
 		</table>
 	</div>
 

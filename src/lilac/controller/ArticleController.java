@@ -66,7 +66,7 @@ public class ArticleController {
 		Article article = articleService.getArticle(Integer.parseInt(articleId));
 		
 		model.addAttribute("article", article);
-		return "updateBoardForm";
+		return "updateArticleForm";
 	}
 
 	// article 수정 form 받아오기
