@@ -52,6 +52,7 @@ public class ArticleController {
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public ModelAndView writePost(Article article, HttpSession session, Model model) {
 		articleService.insertArticle(article);
+		System.out.println(article.getId());
 		return new ModelAndView("redirect:/"+article.getId());
 	}
 	
@@ -69,7 +70,7 @@ public class ArticleController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public ModelAndView articleUpdatePost(Model model, Article article) {
 		articleService.updateArticle(article);
-		return new ModelAndView("redirect:/article/"+article.getId());
+		return new ModelAndView("redirect:/"+article.getId());
 	}
 
 	// article 본문 삭제 구현
