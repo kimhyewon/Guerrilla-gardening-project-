@@ -1,7 +1,9 @@
 package lilac.controller;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 
 import lilac.model.Article;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import core.exception.ForignKeyException;
 import core.exception.InsertTargetRecordNotFoundException;
 
 @Controller
@@ -28,21 +31,21 @@ public class ArticleController {
 	public String listGet(Model model, @PathVariable("articleId") String articleId, HttpSession session) {
 		String userId = (String) session.getAttribute("userId");
 		Article article = articleService.getArticle(Integer.parseInt(articleId));
-//		List<ArticleComment> comments = articleService.getComments(article.getId());
-		
+		List<ArticleComment> comments = articleService.getComments(article.getId());
+
 		model.addAttribute("article", article);
-//		model.addAttribute("comments", comments);
+		model.addAttribute("comments", comments);
 		return "showArticle";
 	}
 	
 	// article create form 보내주기
 	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public String wirteGet(Model model, HttpSession session) {
-		String userId = (String) session.getAttribute("userId");
+//		String userId = (String) session.getAttribute("userId");
 //		Article article = articleService.getArticle(Integer.parseInt(articleId));
 		
 //		model.addAttribute("article", article);
-		model.addAttribute("user", userId);
+//		model.addAttribute("user", userId);
 		
 		
 		return "articleForm";
@@ -81,4 +84,27 @@ public class ArticleController {
 		articleService.deleteArticle(article.getId());
 		return new ModelAndView("redirect:/");
 	}
+	
+	//댓글 등록 구현
+		@RequestMapping(value = "/save/answer", method = RequestMethod.POST)
+		protected String commentPost(String articleId, String userId, String content,
+				HttpSession session, Model model) throws ServletException,
+				IOException, ForignKeyException {
+			
+			ArticleComment articleComment = new ArticleComment(Integer.parseInt(articleId), userId, content);
+			articleService.insertArticleCommnet(articleComment);
+			
+			return "redirect:/"+articleId;
+		}
+		
+		//댓글 삭제 구현
+		@RequestMapping(value = "/delete/answer", method = RequestMethod.POST)
+		protected String commentDeletePost(String articleId, String userId, String commentTime,
+				HttpSession session, Model model) throws ServletException,
+				IOException, ForignKeyException {
+			
+			articleService.deleteArticleComment(Integer.parseInt(articleId), userId, commentTime);
+			
+			return "redirect:/"+articleId;
+		}
 }

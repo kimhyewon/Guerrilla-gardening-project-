@@ -30,14 +30,13 @@ pageContext.setAttribute("lf", "\n");
 	</div>
 
 	<!-- 댓글 리스트 -->
-<!-- 	<div id="comments">
+	<div id="comments">
 		<c:forEach var="articleComment" items="${comments}">
-			<form >
+			<form method="post" action="/delete/answer" >
 				<input type="hidden" name="articleId" value="${article.id}" />
 				<input type="hidden" name="userId" value="${articleComment.userId}" />
 				<input type="hidden" name="commentTime" value="${articleComment.commentTime}" />
-				<input type="hidden" name="url" value="/api/article/comment/delete"/>
-				<div class="comment">
+
 					<table>
 						<tr>
 							<td style="width:15%; table-layout:fixed; word-break:break-all;"><span class="comment-author">${articleComment.userId}</span></td> 
@@ -51,15 +50,26 @@ pageContext.setAttribute("lf", "\n");
 				</div>
 			</form>
 		</c:forEach>
-	</div> -->
+	</div>
 
 	<!-- 댓글 작성 부분 -->
+	<div class="answerWrite">
+		<form method="post" action="/save/answer" method="post">
+			<input type="hidden" name="articleId" value="${article.id}" />
+			<div id = "comment_writer">아이디</div>
+			<input type="text" name="userId" id="userId" />
+			<div id = "comment_content">내용</div>
+			<textarea name="content" id="content"></textarea>
+			<input type="submit" value="저장" />
+		</form>
+	</div>
+
 	<!-- <div id="answerWrite">
 		<form>
 			<input type="hidden" name="articleId" value="${article.id}" />
 			
 			<div id = "comment_writer">아이디<br />
-				<input type="text" name="userId" id="userId" style="width:100px; height:17px;" />
+				${articleComment.userId}
 			</div>
 			<div id = "comment_content">
 				<textarea name="content" id="content" style="width:545px; height:47px;"></textarea>
@@ -67,8 +77,8 @@ pageContext.setAttribute("lf", "\n");
 			<input type="hidden" name="url" value="/api/article/comment/create"/>
 			<input type="submit" value="저장" />
 		</form>
-	</div>
- -->
+	</div> -->
+
 	<!-- article 본문 수정, 삭제  --> 
 	<div id ="update_button"><a href="/update/${article.id}">글 수정</a></div>
 	<div id ="delete_button">
