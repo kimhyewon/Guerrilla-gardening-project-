@@ -17,5 +17,6 @@ public class MainService {
 	
 	public List<Article> getArticles() {
 		return articleDao.selectAll();
+		
 	}
 }

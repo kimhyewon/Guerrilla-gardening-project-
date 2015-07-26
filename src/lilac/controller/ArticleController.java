@@ -21,6 +21,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import core.exception.ForignKeyException;
 import core.exception.InsertTargetRecordNotFoundException;
+import core.exception.NotSupportFileSizeException;
+import core.exception.NotSupportFileTypeException;
 
 @Controller
 public class ArticleController {
@@ -50,14 +52,26 @@ public class ArticleController {
 		
 		return "articleForm";
 	}
+	
+//	@RequestMapping(value = "/create", method = RequestMethod.POST)
+//	public ModelAndView writePost(Product product, FileInfo fileInfo, @PathVariable("shopUrl") String url) {
+//			fileInfo.checkUploadFIle();
+//
+//			fileInfo.setFileNameByUUID();
+//		fileInfo.updateLocalLocation();
+//		product.setImgUrl(fileInfo.getLocalLocation());
+//
+//		productService.representImage(fileInfo, product);
+//
+//		return new ModelAndView("redirect:/shop/"+url+"/category/"+product.getCategoryId());
+//	}
 
 	// article create form에서 정보 받아오기
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public ModelAndView writePost(Article article, HttpSession session, Model model) {
 		articleService.insertArticle(article);
-		System.out.println(article.getId());
-		return new ModelAndView("redirect:/"+article.getId());
-	}
+		return new ModelAndView("redirect:/");
+	}	
 	
 	// article 수정 form 보내주기
 	@RequestMapping(value = "/update/{articleId}", method = RequestMethod.GET)
@@ -86,25 +100,25 @@ public class ArticleController {
 	}
 	
 	//댓글 등록 구현
-		@RequestMapping(value = "/save/answer", method = RequestMethod.POST)
-		protected String commentPost(String articleId, String userId, String content,
-				HttpSession session, Model model) throws ServletException,
-				IOException, ForignKeyException {
+	@RequestMapping(value = "/save/answer", method = RequestMethod.POST)
+	protected String commentPost(String articleId, String userId, String content,
+			HttpSession session, Model model) throws ServletException,
+			IOException, ForignKeyException {
 			
-			ArticleComment articleComment = new ArticleComment(Integer.parseInt(articleId), userId, content);
-			articleService.insertArticleCommnet(articleComment);
+		ArticleComment articleComment = new ArticleComment(Integer.parseInt(articleId), userId, content);
+		articleService.insertArticleCommnet(articleComment);
 			
-			return "redirect:/"+articleId;
-		}
+		return "redirect:/"+articleId;
+	}
 		
-		//댓글 삭제 구현
-		@RequestMapping(value = "/delete/answer", method = RequestMethod.POST)
-		protected String commentDeletePost(String articleId, String userId, String commentTime,
-				HttpSession session, Model model) throws ServletException,
-				IOException, ForignKeyException {
+	//댓글 삭제 구현
+	@RequestMapping(value = "/delete/answer", method = RequestMethod.POST)
+	protected String commentDeletePost(String articleId, String userId, String commentTime,
+			HttpSession session, Model model) throws ServletException,
+			IOException, ForignKeyException {
 			
-			articleService.deleteArticleComment(Integer.parseInt(articleId), userId, commentTime);
-			
-			return "redirect:/"+articleId;
-		}
+		articleService.deleteArticleComment(Integer.parseInt(articleId), userId, commentTime);
+		
+		return "redirect:/"+articleId;
+	}
 }

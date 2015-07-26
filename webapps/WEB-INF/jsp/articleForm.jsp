@@ -16,8 +16,8 @@
 				</tr>
 			</table> -->
 		</div>
-		<input type="file" name="beforeImg" />
-		<input type="file" name="afterImg" />
+		<!-- <input type="file" name="beforeImg" />
+		<input type="file" name="afterImg" /> -->
 		<div id = "article_content"><textarea name="content" placeholder="내용을 입력하세요." /></textarea></div>
 		<!-- <div id = "recruit_count">
 			<select>

@@ -26,8 +26,9 @@ public class MainController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showArticleList(Model model, HttpSession session) throws ServletException, IOException {
 		List<Article> articles = mainService.getArticles();
-
+	
 		model.addAttribute("articles", articles);
+		System.out.println(articles);
 		
 		return "index";
 	}
