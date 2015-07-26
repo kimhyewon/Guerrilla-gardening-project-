@@ -49,7 +49,7 @@ public class ArticleDao {
 	}
 
 	public List<Article> selectAll() {
-		String sql = "select * from ARTICLE order by ID DESC";
+		String sql = "select * from ARTICLE order by ID";
 		try {
 			return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Article>(Article.class));
 		} catch (EmptyResultDataAccessException e) {
