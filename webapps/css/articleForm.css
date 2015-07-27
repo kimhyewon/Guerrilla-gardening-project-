@@ -1,0 +1,41 @@
+body {
+	background-color: #DEDEDE;
+	font-family: "Martel Sans", Arial, sans-serif;
+}
+
+#article_form_container {
+	background-color: white;
+	width: 92%;
+	height: 92%;
+	margin: 50px;
+	border-radius: 1.5em;
+}
+
+#article_form {
+	text-align: center;
+	margin: auto;
+	padding: 70px;
+}
+
+#recruit_count {
+	margin-left: 128px;
+}
+#recruit_count_text {
+	float: left;
+}
+
+#select_recruit_count {
+	float: left;
+	
+}
+
+input[type="text"] {
+	height: 30px;
+	width: 70%;
+}
+
+textarea {
+	clear: both;
+	width: 74%;
+	height: 300px;
+}
