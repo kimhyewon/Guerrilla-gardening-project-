@@ -35,7 +35,7 @@
 			<div id="theGrid" class="main">
 				<section class="grid">
 					<c:forEach var="article" items="${articles}">
-						<a class="grid__item" href="#">
+						<a class="grid__item" href="/${article.id}">
 							<h2 class="title title--preview"></h2>
 							<div class="loader"></div>
 
