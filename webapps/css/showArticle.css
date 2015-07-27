@@ -1,0 +1,35 @@
+body {
+	background-color: #DEDEDE;
+	font-family: "Martel Sans", Arial, sans-serif;
+}
+
+#show_article_container {
+	background-color: white;
+	width: 92%;
+	height: 92%;
+	margin: 50px;
+	border-radius: 1.5em;
+}
+
+#show_article {
+	text-align: center;
+	margin: auto;
+	padding: 70px;
+}
+
+#show_article_address {
+	font-size: 1.2em;
+  	margin-bottom: 10px;
+  	color: #81c483;	
+}
+
+#show_article_title {
+	font-size: 2.25em;
+	color: #7b7b7b;
+}
+  
+#show_article_content {
+	font-size: 1.2em;
+	color: #7b7b7b;
+  	font-weight: 400;
+}

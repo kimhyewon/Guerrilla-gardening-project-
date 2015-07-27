@@ -60,17 +60,19 @@ button:focus {
 	position: relative;
 	margin-left: 950px;
 	margin-top: 80px;
-
+  padding-top: 40px;
+  margin-bottom: -50px;
 }
 
 
 #main_icon {
   
-  padding-left: 510px;
+  
 }
 
 .main_title_img {
   float: left;
+  padding-left: 510px;
 }
 
 .main_title_con {
@@ -224,7 +226,6 @@ button:focus {
   position: relative;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 70px;
 }
 
 /* Overlay */
@@ -919,7 +920,7 @@ button:focus {
   }
 
   .grid__item {
-    padding: 20px 20px 20px;
+    padding: 0px 20px 20px;
   }
 
   /* Demo ad */

@@ -21,16 +21,18 @@
 			</header>
 			<div id="main_icon">
 				<!-- <img src="http://image.spreadshirtmedia.net/image-server/v1/designs/15486559,width=178,height=178/hand-grenade,-flowers,-guerilla-gardening.png" style="width:120px;"> -->
-				<div class="main_title_img"><img src="http://i.imgur.com/37ipa4Z.jpg" style="width:115px;"></div>
+				<div class="main_title_img"><img src="/img/title.png" style="width:270px;"></div>
+				<div id ="go_to_write"><a href="/write"><img src="/img/sign1.png" style="width:120px;"></a></div>
+				<div id="grasses"><img src="/img/grasses.png" style="width:90%; height:60px;margin-left:62px;"></div>
 				<!-- <div class="main_title_img"><img src="http://i.imgur.com/RnO4OrD.jpg" style="width:170px;"></div> -->
 				
-				<div class="main_title_con">
+				<!-- <div class="main_title_con">
 					<div class="main_title">Guerrilla</div>
 					<div class="main_title2">Gardening</div>
-				</div>
+				</div> -->
 			</div>
 
-			<div id ="go_to_write"><a href="/write">글 쓰러 가기</a></div>
+			
 
 			<div id="theGrid" class="main">
 				<section class="grid">
