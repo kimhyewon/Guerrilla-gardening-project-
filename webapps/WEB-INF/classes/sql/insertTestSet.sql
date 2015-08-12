@@ -38,8 +38,8 @@ insert into ARTICLE VALUES(null, 'user2', '판교역 공터 미니정원 조성�
 '/userImg/beforeImg/2.jpg', '/userImg/afterImg/14.jpg', '경기 성남시 분당구 삼평동', 10, 10, null);
 
 
-insert into ARTICLE_COMMENT VALUES(1, 'user1', null, '아아아아아아앙');
-insert into ARTICLE_COMMENT VALUES(1, 'user2', null, '하하하하하');
+--insert into ARTICLE_COMMENT VALUES(1, 'user1', null, '아아아아아아앙');
+--insert into ARTICLE_COMMENT VALUES(1, 'user2', null, '하하하하하');
 
 
 --private int articleId;

@@ -26,7 +26,6 @@ body {
 
 #select_recruit_count {
 	float: left;
-	
 }
 
 input[type="text"] {
@@ -34,8 +33,82 @@ input[type="text"] {
 	width: 70%;
 }
 
+#visible_btn {
+	margin-top:30px;
+	margin-bottom: 10px;
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	margin-left: 130px;
+}
+
+#img_container {
+	margin-left: 140px;
+	padding: 0 70px 70px 70px;
+}
+
 textarea {
 	clear: both;
 	width: 74%;
 	height: 300px;
+}
+
+#area {
+	position:relative;
+	width: 600px;
+	height: 400px;
+	background-image: url("/img/dragndrop/myimg2.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.squares {
+
+}
+.square-wrapper {
+	width: 60px;
+	height: 60px;
+	float: left;
+	position: relative;
+	margin-right: 10px;
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+
+.square-wrapper2 {
+	width: 60px;
+	height: 110px;
+	float: left;
+	position: relative;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.square {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+}
+
+.row {
+	clear: left;
+}
+
+/*.rose {
+	position: absolute;
+	top: 0; 
+	left: 0;
+	right: 0; 
+	bottom:0;
+	margin: auto; 
+}*/
+
+.square.dragging {
+	border: 2px solid #FFF;
+}
+
+.size_btn {
+
 }
