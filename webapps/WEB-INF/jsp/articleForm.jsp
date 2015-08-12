@@ -5,8 +5,9 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/articleForm.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script type="text/javascript"  src="js/test.js"></script>
-	
+
 </head>
 <body>
 	<div id = "article_form_container">

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+$(document).ready(function(){
 	var sampleSquare = document.querySelector('.square');
 
 	sampleSquare.addEventListener('mousedown', function(event){
