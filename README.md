@@ -1,6 +1,5 @@
-# edit-pictures
+# edit-pictureserhearhaerherah
 사진을 불러오기, 사진 편집, 그리고 편집된 사진을 저장 할 수 있는 기능을 라이브러리화 제공<br><br><br>
-wgwegaweg
 
 
 #만들게 된 배경
