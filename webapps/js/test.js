@@ -1,3 +1,4 @@
+// hi
 document.addEventListener('DOMContentLoaded', function(){
 var sampleSquare = document.querySelector('.square');
 
