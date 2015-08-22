@@ -1,6 +1,9 @@
 $(document).ready(function(){
-	$('#square-list').mousedown(function(event){ 
-		var tmp;
+	$('.square').mousedown(function(event){ 
+		console.log($('.square'));
+		var i = $('.square').index(this);
+		console.log(i);
+
 		event.preventDefault();
 		(new shape.Square())
 		.setPosition(event.pageX-30,event.pageY-30)
@@ -15,19 +18,41 @@ var shape = (function() {
 		this.element.classList.add("square");
 		this.container = document.getElementById('area');
 		
-		this.img = document.createElement("img");
-		this.img.className = "rose";
-		this.img.src = "/img/dragndrop/rose.png";
-		this.img.width = "60";
-		this.img.height = "60";
-		this.element.appendChild(this.img);
+		console.log(this);
+		var i = 2;
+		console.log(i);
+		
+		switch (i) {
+  			case 0 : 
+  				this.img = document.createElement("img");
+				this.img.className = "rose";
+				this.img.src = "/img/dragndrop/rose.png";
+				this.img.width = "60";
+				this.img.height = "60";
+				this.element.appendChild(this.img);
+  			break;
+  			case 1 : 
+  				this.img = document.createElement("img");
+				this.img.className = "yellow";
+				this.img.src = "/img/dragndrop/yellow.png";
+				this.img.width = "60";
+				this.img.height = "60";
+				this.element.appendChild(this.img);
+  			break;
+  			case 2 : 
+  				this.img = document.createElement("img");
+				this.img.className = "pink";
+				this.img.src = "/img/dragndrop/pink.png";
+				this.img.width = "60";
+				this.img.height = "60";
+				this.element.appendChild(this.img);
+  			break;
+		}
 
-		// this.img2 = document.createElement("img");
-		// this.img2.className = "yellow";
-		// this.img2.src = "/img/dragndrop/yellow.png";
-		// this.img2.width = "60";
-		// this.img2.height = "60";
-		// this.element.appendChild(this.img2);
+
+		
+
+		
 		// <img src="rose.png" height="50" width="50">
 
 		// this.element = document.querySelector(".square");
@@ -67,10 +92,10 @@ var shape = (function() {
 
 Square.prototype = {
 	setPosition : function(e1, e2) {
-	this.element.style.left = e1 +'px';
-	this.element.style.top = e2 + 'px';
+		this.element.style.left = e1 +'px';
+		this.element.style.top = e2 + 'px';
 
-	return this;
+		return this;
 	},
 	startDragging : function(e) {
 		e.preventDefault();
@@ -161,8 +186,9 @@ Square.prototype = {
 
 		this._startBtnX = event.pageX;
 		this._startBtnY = event.pageY;
-		this._imgHeight = parseInt(e.target.parentNode.querySelector('.rose').height);
-		this._imgWidth = parseInt(e.target.parentNode.querySelector('.rose').width);
+
+		this._imgHeight = parseInt(e.target.parentElement.firstChild.height);
+		this._imgWidth = parseInt(e.target.parentElement.firstChild.width);
 		this._conHeight = this.element.offsetHeight;
 		this._conWidth = this.element.offsetWidth;
 		this._btnTop = parseInt(e.target.style.top) + 4;
@@ -177,8 +203,8 @@ Square.prototype = {
 	_onBtnMouseMove : function(e) {
 		var diffX = event.pageX - this._startBtnX, diffY = event.pageY - this._startBtnY;
 		// 스티커 크기 조절  
-		e.target.parentNode.querySelector('.rose').width = this._imgWidth + diffX;
-		e.target.parentNode.querySelector('.rose').height = this._imgHeight + diffY;
+		e.target.parentElement.firstChild.width = this._imgWidth + diffX;
+		e.target.parentElement.firstChild.height = this._imgHeight + diffY;
 		// 스티커 테두리 크기 조절 
 		this.element.style.width = (this._conWidth + diffX) +'px';
 		this.element.style.height = (this._conHeight + diffY) +'px';
