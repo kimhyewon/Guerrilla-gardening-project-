@@ -26,7 +26,7 @@ var shape = (function() {
   			case 0 : 
   				this.img = document.createElement("img");
 				this.img.className = "rose";
-				this.img.src = "/img/dragndrop/rose.png";
+				this.img.src = "img/dragndrop/rose.png";
 				this.img.width = "60";
 				this.img.height = "60";
 				this.element.appendChild(this.img);
@@ -34,7 +34,7 @@ var shape = (function() {
   			case 1 : 
   				this.img = document.createElement("img");
 				this.img.className = "yellow";
-				this.img.src = "/img/dragndrop/yellow.png";
+				this.img.src = "img/dragndrop/yellow.png";
 				this.img.width = "60";
 				this.img.height = "60";
 				this.element.appendChild(this.img);
@@ -42,7 +42,7 @@ var shape = (function() {
   			case 2 : 
   				this.img = document.createElement("img");
 				this.img.className = "pink";
-				this.img.src = "/img/dragndrop/pink.png";
+				this.img.src = "img/dragndrop/pink.png";
 				this.img.width = "60";
 				this.img.height = "60";
 				this.element.appendChild(this.img);
@@ -61,7 +61,7 @@ var shape = (function() {
 		// size 버튼 생성 
 		this.sizeBtn = document.createElement("img");
 		this.sizeBtn.className = "size_btn";
-		this.sizeBtn.src = "/img/dragndrop/size3.png";
+		this.sizeBtn.src = "img/dragndrop/size3.png";
 		this.sizeBtn.style.position = "absolute";
 		this.sizeBtn.width = "28";
 		this.sizeBtn.height = "28";
@@ -72,7 +72,7 @@ var shape = (function() {
 		// ratate 버튼 생성
 		this.rotateBtn = document.createElement("img");
 		this.rotateBtn.className = "rotate_btn";
-		this.rotateBtn.src = "/img/dragndrop/rotate2.png";
+		this.rotateBtn.src = "img/dragndrop/rotate2.png";
 		this.rotateBtn.style.position = "absolute";
 		this.rotateBtn.width = "28";
 		this.rotateBtn.height = "28";
