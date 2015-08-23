@@ -1,11 +1,9 @@
 $(document).ready(function(){
 	$('.square').mousedown(function(event){ 
-		console.log($('.square'));
-		var i = $('.square').index(this);
-		console.log(i);
+		var index = $('.square').index(this);
 
 		event.preventDefault();
-		(new shape.Square())
+		(new shape.Square(index))
 		.setPosition(event.pageX-30,event.pageY-30)
 		.startDragging(event)
 		.setParent(document.body)
@@ -13,16 +11,12 @@ $(document).ready(function(){
 });
 
 var shape = (function() {
-	function Square() {
+	function Square(index) {
 		this.element = document.createElement('div');
 		this.element.classList.add("square");
 		this.container = document.getElementById('area');
 		
-		console.log(this);
-		var i = 2;
-		console.log(i);
-		
-		switch (i) {
+		switch (index) {
   			case 0 : 
   				this.img = document.createElement("img");
 				this.img.className = "rose";
@@ -48,14 +42,6 @@ var shape = (function() {
 				this.element.appendChild(this.img);
   			break;
 		}
-
-
-		
-
-		
-		// <img src="rose.png" height="50" width="50">
-
-		// this.element = document.querySelector(".square");
 
 
 		// size 버튼 생성 
@@ -86,7 +72,6 @@ var shape = (function() {
 		this._onBtnMouseMove = this._onBtnMouseMove.bind(this);
 		this._onBtnMouseUp = this._onBtnMouseUp.bind(this);
 
-		// Square.p = Square.prototype;
 	}
 
 
