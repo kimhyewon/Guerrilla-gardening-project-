@@ -16,32 +16,41 @@ var shape = (function() {
 		this.element.classList.add("square");
 		this.container = document.getElementById('area');
 		
-		switch (index) {
-  			case 0 : 
-  				this.img = document.createElement("img");
-				this.img.className = "rose";
-				this.img.src = "img/dragndrop/rose.png";
-				this.img.width = "60";
-				this.img.height = "60";
-				this.element.appendChild(this.img);
-  			break;
-  			case 1 : 
-  				this.img = document.createElement("img");
-				this.img.className = "yellow";
-				this.img.src = "img/dragndrop/yellow.png";
-				this.img.width = "60";
-				this.img.height = "60";
-				this.element.appendChild(this.img);
-  			break;
-  			case 2 : 
-  				this.img = document.createElement("img");
-				this.img.className = "pink";
-				this.img.src = "img/dragndrop/pink.png";
-				this.img.width = "60";
-				this.img.height = "60";
-				this.element.appendChild(this.img);
-  			break;
-		}
+		
+			this.img = document.createElement("img");
+			this.img.className = "'" + index + "'";
+			this.img.src = "img/dragndrop/" + index + ".png";
+			this.img.width = "60";
+			this.img.height = "60";
+			this.element.appendChild(this.img);
+		
+
+		// switch (index) {
+  // 			case 0 : 
+  // 				this.img = document.createElement("img");
+		// 		this.img.className = "rose";
+		// 		this.img.src = "img/dragndrop/rose.png";
+		// 		this.img.width = "60";
+		// 		this.img.height = "60";
+		// 		this.element.appendChild(this.img);
+  // 			break;
+  // 			case 1 : 
+  // 				this.img = document.createElement("img");
+		// 		this.img.className = "yellow";
+		// 		this.img.src = "img/dragndrop/yellow.png";
+		// 		this.img.width = "60";
+		// 		this.img.height = "60";
+		// 		this.element.appendChild(this.img);
+  // 			break;
+  // 			case 2 : 
+  // 				this.img = document.createElement("img");
+		// 		this.img.className = "pink";
+		// 		this.img.src = "img/dragndrop/pink.png";
+		// 		this.img.width = "60";
+		// 		this.img.height = "60";
+		// 		this.element.appendChild(this.img);
+  // 			break;
+		// }
 
 
 		// size 버튼 생성 

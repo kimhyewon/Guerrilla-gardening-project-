@@ -32,79 +32,79 @@
 					<div id ='square-list'>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="rose" src="img/dragndrop/rose.png" height="60" width="60">
+								<img class="0" src="img/dragndrop/0.png" height="60" width="60">
 							</div> 	
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="yellow" src="img/dragndrop/yellow.png" height="60" width="60">
+								<img class="1" src="img/dragndrop/1.png" height="60" width="60">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="pink" src="img/dragndrop/pink.png" height="60" width="60">
+								<img class="2" src="img/dragndrop/2.png" height="60" width="60">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="white" src="img/dragndrop/white.png" height="60" width="60">
+								<img class="3" src="img/dragndrop/3.png" height="60" width="60">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="blue" src="img/dragndrop/blue.png" height="60" width="60">
+								<img class="4" src="img/dragndrop/4.png" height="60" width="60">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="purple2" src="img/dragndrop/purple2.png" height="80" width="80" style="margin-top:-12px;margin-left:-7px;">
+								<img class="5" src="img/dragndrop/5.png" height="80" width="80" style="margin-top:-12px;margin-left:-7px;">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="purple" src="img/dragndrop/purple.png" height="60" width="60">
+								<img class="6" src="img/dragndrop/6.png" height="60" width="60">
 							</div>
 						</div>
 						<div class="row">
 						</div>
 						<div class = 'square-wrapper2'>
 							<div class="square">
-								<img class="a" src="img/dragndrop/a.png" height="120" width="80">
+								<img class="7" src="img/dragndrop/7.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="b" src="img/dragndrop/b.png" height="120" width="80">
+								<img class="8" src="img/dragndrop/8.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="c" src="img/dragndrop/c.png" height="120" width="80">
+								<img class="9" src="img/dragndrop/9.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="d" src="img/dragndrop/d.png" height="120" width="80">
+								<img class="10" src="img/dragndrop/10.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="e" src="img/dragndrop/e.png" height="120" width="80">
+								<img class="11" src="img/dragndrop/11.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="f" src="img/dragndrop/f.png" height="120" width="80">
+								<img class="12" src="img/dragndrop/12.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="g" src="img/dragndrop/g.png" height="120" width="80">
+								<img class="13" src="img/dragndrop/13.png" height="120" width="80">
 							</div>
 						</div>
 						<div class = 'square-wrapper'>
 							<div class="square">
-								<img class="h" src="img/dragndrop/h.png" height="120" width="80">
+								<img class="14" src="img/dragndrop/14.png" height="120" width="80">
 							</div>
 						</div>
 					</div>
