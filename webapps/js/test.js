@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	$('.square').mousedown(function(event){ 
-		var index = $('.square').index(this);
+		var index = $('.square').index(this); 
 
 		event.preventDefault();
-		(new shape.Square(index))
+		(new shape.Square(index))	//클릭된 square가 몇번째 인덱스인지 넘겨줌
 		.setPosition(event.pageX-30,event.pageY-30)
 		.startDragging(event)
 		.setParent(document.body)
@@ -16,43 +16,14 @@ var shape = (function() {
 		this.element.classList.add("square");
 		this.container = document.getElementById('area');
 		
+		//클릭된 스티커 추가 
+		this.img = document.createElement("img");
+		this.img.className = "'" + index + "'";
+		this.img.src = "img/dragndrop/" + index + ".png";
+		this.img.width = "60";
+		this.img.height = "60";
+		this.element.appendChild(this.img);
 		
-			this.img = document.createElement("img");
-			this.img.className = "'" + index + "'";
-			this.img.src = "img/dragndrop/" + index + ".png";
-			this.img.width = "60";
-			this.img.height = "60";
-			this.element.appendChild(this.img);
-		
-
-		// switch (index) {
-  // 			case 0 : 
-  // 				this.img = document.createElement("img");
-		// 		this.img.className = "rose";
-		// 		this.img.src = "img/dragndrop/rose.png";
-		// 		this.img.width = "60";
-		// 		this.img.height = "60";
-		// 		this.element.appendChild(this.img);
-  // 			break;
-  // 			case 1 : 
-  // 				this.img = document.createElement("img");
-		// 		this.img.className = "yellow";
-		// 		this.img.src = "img/dragndrop/yellow.png";
-		// 		this.img.width = "60";
-		// 		this.img.height = "60";
-		// 		this.element.appendChild(this.img);
-  // 			break;
-  // 			case 2 : 
-  // 				this.img = document.createElement("img");
-		// 		this.img.className = "pink";
-		// 		this.img.src = "img/dragndrop/pink.png";
-		// 		this.img.width = "60";
-		// 		this.img.height = "60";
-		// 		this.element.appendChild(this.img);
-  // 			break;
-		// }
-
-
 		// size 버튼 생성 
 		this.sizeBtn = document.createElement("img");
 		this.sizeBtn.className = "size_btn";
