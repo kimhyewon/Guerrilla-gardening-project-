@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import lilac.model.Article;
 import lilac.model.ArticleComment;
+import lilac.model.FileInfo;
+import lilac.model.Notice;
 import lilac.service.ArticleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ import core.exception.ForignKeyException;
 import core.exception.InsertTargetRecordNotFoundException;
 import core.exception.NotSupportFileSizeException;
 import core.exception.NotSupportFileTypeException;
+import core.util.ModelAndViewUtils;
 
 @Controller
 public class ArticleController {
@@ -68,10 +71,24 @@ public class ArticleController {
 
 	// article create form에서 정보 받아오기
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
-	public ModelAndView writePost(Article article, HttpSession session, Model model) {
-		articleService.insertArticle(article);
+	public ModelAndView writePost(Article article, FileInfo fileInfo) {
+//		articleService.insertArticle(article);
+		try{
+			fileInfo.checkUploadFIle();
+		} catch (NotSupportFileSizeException | NotSupportFileTypeException e) {
+			return ModelAndViewUtils.renderToNotice(new Notice("error", e.getMessage()));
+		}
+		fileInfo.setFileNameByUUID();
+		fileInfo.updateLocalLocation();
+		article.setBeforeImg(fileInfo.getLocalLocation());
+		try {
+			articleService.representImage(fileInfo, article);
+		} catch (Exception e) {
+			return ModelAndViewUtils.renderToNoticeForSeller(new Notice("Fail", "상품을 등록을 다시 시도해 주세요 "));
+		}
 		return new ModelAndView("redirect:/");
 	}	
+	
 	
 	// article 수정 form 보내주기
 	@RequestMapping(value = "/update/{articleId}", method = RequestMethod.GET)

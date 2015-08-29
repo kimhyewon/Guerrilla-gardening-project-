@@ -10,4 +10,14 @@
 	<entry key="database.username">root</entry>
 	<entry key="database.password">1234</entry>
 	
+	<!--  Mail  -->
+	<entry key="mail.host">smtp.gmail.com</entry>
+	<entry key="mail.port">587</entry>
+	<entry key="mail.username">jadodeveloper@gmail.com</entry>
+	<entry key="mail.password">next123!@#</entry>
+	<entry key="mail.requestAddress">http://localhost:8080</entry>
+	
+	<!-- Image -->
+	<entry key="image.location">/Users/gracelilac/Documents/devweb-workspace/gardening/webapps</entry>
+	
 </properties>

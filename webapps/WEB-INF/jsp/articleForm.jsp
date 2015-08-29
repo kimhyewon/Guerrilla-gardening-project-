@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id = "article_form_container">
-		<form name="articleForm" action="/write" method="post">
+		<form name="articleForm" action="/write" method="post" enctype="multipart/form-data">
 			<div id ="article_form">
 				<div id = "article_title">제목 : <input type="text" name="title" placeholder="제목을 입력하세요."/></div>
 				<div id = "address">주소 : <input type="text" name="address" placeholder="주소를 입력하세요."/></div>
@@ -28,6 +28,12 @@
 				<div id ="visible_btn" onclick="visible()"></div>
 				<div id ="img_container" style="display:none;">
 				<!-- img 시작  -->
+
+					<div id = "before-img">
+						사진 등록<br /><input type="file" name="file" style="text-align:center; width:150px;"/>
+						<input type="hidden" name="localLocation" value="/userImg/beforeImg">
+					</div>
+
 					<div id="area"></div>
 					<div id ='square-list'>
 						<div class = 'square-wrapper'>

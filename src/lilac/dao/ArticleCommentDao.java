@@ -49,4 +49,10 @@ public class ArticleCommentDao {
 		Object[] args = {articleComment.getArticleId(), articleComment.getUserId(), articleComment.getCommentTime()};
 		jdbcTemplate.update(sql, args);
 	}
+	
+	public void removeByArticleId(Integer articleId) {
+		String sql = "delete from ARTICLE_COMMENT where ARTICLE_ID=?";
+		Object[] args = new Object[] { articleId };
+		jdbcTemplate.update(sql, args);
+	}
 }

@@ -35,9 +35,9 @@ public class Article {
 		this(0, userId, title, content, beforeImg, afterImg, address, recruitCount, nowCount, null);
 	}
 	
-	public Article(String title, String content, String beforeImg, String afterImg, String address, int recruitCount, int nowCount) {
-		this(0, null, title, content, beforeImg, afterImg, address, recruitCount, nowCount, null);
-	}
+//	public Article(String title, String content, String beforeImg, String afterImg, String address, int recruitCount, int nowCount) {
+//		this(0, null, title, content, beforeImg, afterImg, address, recruitCount, nowCount, null);
+//	}
 
 	public int getId() {
 		return id;

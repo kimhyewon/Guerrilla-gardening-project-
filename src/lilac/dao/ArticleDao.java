@@ -31,9 +31,13 @@ public class ArticleDao {
 //		jdbcTemplate.update(sql, "user1", article.getTitle(), article.getContent(), article.getBeforeImg(), article.getAfterImg(), article.getAddress(), article.getRecruitCount());
 //	}
 
-	public void insert(Article article) {
-		String sql = "insert into ARTICLE values(null, ?, ?, ?, null, null, ?, 0, 0, null)";
-		jdbcTemplate.update(sql, "user1", article.getTitle(), article.getContent(), article.getAddress());
+	public void insert(final Article article) {
+		String sql = "insert into ARTICLE values(null, ?, ?, ?, ?, null, ?, 0, 0, null)";
+		System.out.println(article.getTitle());
+		System.out.println(article.getContent());
+		System.out.println(article.getBeforeImg());
+		System.out.println(article.getAddress());
+		jdbcTemplate.update(sql, "user1", article.getTitle(), article.getContent(), article.getBeforeImg(), article.getAddress());
 	}
 //beforeImg, afterImg, recruitCount, nowCount 을 넣어주지 않음. 
 //로그인 기능 없기 때문에 userId에 user1을 임의로 넣어줌. 구현 후 getUserId로 불러와야 함. 
@@ -65,5 +69,11 @@ public class ArticleDao {
 	public void remove(int articleId) {
 		String sql = "delete from ARTICLE where ID=?";
 		jdbcTemplate.update(sql, articleId);
+	}
+	
+	public void updateImgUrl(Article article) {
+		String sql = "update ARTICLE set IMG_URL=? where ID=?";
+		jdbcTemplate.update(sql, article.getBeforeImg(), article.getId());
+		
 	}
 }
