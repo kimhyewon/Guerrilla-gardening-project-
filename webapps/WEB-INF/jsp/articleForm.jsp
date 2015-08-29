@@ -28,18 +28,16 @@
 				<div id ="visible_btn" onclick="visible()"></div>
 				<div id ="img_container" style="display:none;">
 				
-				<!-- img 시작  -->
 
+				<!-- img 시작  -->
 					<div id = "before-img">
 						사진 등록<br /><input type="file" name="file" style="text-align:center; width:150px;"/>
 						<input type="hidden" name="localLocation" value="/userImg/beforeImg">
 					</div>
 
-					<div id="holder"></div>
+					<div id="area" style="width:600px";></div>
 
-					<div id="area"></div>
-
-					<div id ='square-list'>
+					<div id ='square-list' style="display:none">
 						<div class = 'square-wrapper'>
 							<div class="square">
 								<img class="0" src="img/dragndrop/0.png" height="60" width="60">
@@ -183,27 +181,30 @@
 	
 	<!-- holder에 upload된 file 바로 보여주기 시작 -->
 	<script>
-    	var upload = document.getElementsByTagName('input')[2],
-        	holder = document.getElementById('holder');
+    	var upload = document.getElementsByTagName('input')[2];
+        var holder = document.getElementById('area');
+        var suqareList = document.getElementById('square-list');
        
       	upload.onchange = function (e) {
         	e.preventDefault();
 
-        	var file = upload.files[0],
-            	reader = new FileReader();
+        	var file = upload.files[0];
+            var reader = new FileReader();
         	reader.onload = function (event) {
-          	var img = new Image();
-          	img.src = event.target.result;
-          	if (img.width > 560) { // holder width
-            	img.width = 560;
-          	}
-          	holder.innerHTML = '';
-          	holder.appendChild(img);
+	          	var img = new Image();
+	          	img.src = event.target.result;
+	      		img.style.position = "relative";
+	        	img.width = 600;
+	        	img.height = 400;
+
+	          	holder.innerHTML = '';
+	          	holder.width = 600;
+	          	holder.appendChild(img);
         	};
         	reader.readAsDataURL(file);
-
         	return false;
       	};
+      	suqareList.style.display = "block";
     </script>
     <!-- holder에 upload된 file 바로 보여주기 끝 -->
 
