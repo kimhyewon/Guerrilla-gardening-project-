@@ -27,6 +27,7 @@
 				</div>
 				<div id ="visible_btn" onclick="visible()"></div>
 				<div id ="img_container" style="display:none;">
+				
 				<!-- img 시작  -->
 
 					<div id = "before-img">
@@ -34,7 +35,10 @@
 						<input type="hidden" name="localLocation" value="/userImg/beforeImg">
 					</div>
 
+					<div id="holder"></div>
+
 					<div id="area"></div>
+
 					<div id ='square-list'>
 						<div class = 'square-wrapper'>
 							<div class="square">
@@ -177,5 +181,31 @@
 	</div>	
 		
 	
+	<!-- holder에 upload된 file 바로 보여주기 시작 -->
+	<script>
+    	var upload = document.getElementsByTagName('input')[2],
+        	holder = document.getElementById('holder');
+       
+      	upload.onchange = function (e) {
+        	e.preventDefault();
+
+        	var file = upload.files[0],
+            	reader = new FileReader();
+        	reader.onload = function (event) {
+          	var img = new Image();
+          	img.src = event.target.result;
+          	if (img.width > 560) { // holder width
+            	img.width = 560;
+          	}
+          	holder.innerHTML = '';
+          	holder.appendChild(img);
+        	};
+        	reader.readAsDataURL(file);
+
+        	return false;
+      	};
+    </script>
+    <!-- holder에 upload된 file 바로 보여주기 끝 -->
+
 </body>
 </html>
