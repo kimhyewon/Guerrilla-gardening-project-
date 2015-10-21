@@ -1,5 +1,3 @@
-var tmp;
-
 $(document).ready(function(){
 	$('.square').mousedown(function(event){ 
 		var index = $('.square').index(this); 
@@ -11,6 +9,8 @@ $(document).ready(function(){
 		.setParent(document.body)
 	});
 });
+
+var tmpBtn;
 
 var shape = (function() {
 	function Square(index) {
@@ -150,7 +150,7 @@ var shape = (function() {
 		},
 		sizeControll : function(e) {
 			e.preventDefault();
-			tmp = e.target;
+			tmpBtn = e.target;
 			
 			this._startBtnX = event.pageX;
 			this._startBtnY = event.pageY;
@@ -180,8 +180,8 @@ var shape = (function() {
 
 			}
 			else {
-				tmp.style.top =  window.event.pageY - parseInt(this.element.style.top) - 4 +'px';
-				tmp.style.left = window.event.pageX - parseInt(this.element.style.left) - 4 + 'px';
+				tmpBtn.style.top =  window.event.pageY - parseInt(this.element.style.top) - 4 +'px';
+				tmpBtn.style.left = window.event.pageX - parseInt(this.element.style.left) - 4 + 'px';
 			}
 			
 		},
