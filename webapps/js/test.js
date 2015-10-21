@@ -1,3 +1,5 @@
+var tmp;
+
 $(document).ready(function(){
 	$('.square').mousedown(function(event){ 
 		var index = $('.square').index(this); 
@@ -52,6 +54,8 @@ var shape = (function() {
 		this._onBtnMouseMove = this._onBtnMouseMove.bind(this);
 		this._onBtnMouseUp = this._onBtnMouseUp.bind(this);
 
+		this._onRotateBtnMouseMove = this._onRotateBtnMouseMove.bind(this);
+		this._onRotateBtnMouseUp = this._onRotateBtnMouseUp.bind(this);
 	}
 
 
@@ -118,15 +122,13 @@ var shape = (function() {
 
 			//사이즈 버튼을 클릭하면 크기 조절할 수 있도록 하는 이벤트 호출 
 			e.target.parentNode.querySelector(".size_btn").addEventListener("mousedown", this.sizeControll.bind(this));
+			
 			//rotate 버튼 클릭하면 rotate 이벤트 호출 
 			e.target.parentNode.querySelector(".rotate_btn").addEventListener("mousedown", this.rotateControll.bind(this));
 		},
 		rotateControll : function(e) {
 			e.preventDefault();
 
-			this._onRotateBtnMouseMove = this._onRotateBtnMouseMove.bind(this);
-			this._onRotateBtnMouseUp = this._onRotateBtnMouseUp.bind(this);
-			     
 			document.addEventListener('mousemove', this._onRotateBtnMouseMove);
 			document.addEventListener('mouseup', this._onRotateBtnMouseUp);
 		},
@@ -148,7 +150,8 @@ var shape = (function() {
 		},
 		sizeControll : function(e) {
 			e.preventDefault();
-
+			tmp = e.target;
+			
 			this._startBtnX = event.pageX;
 			this._startBtnY = event.pageY;
 
@@ -159,23 +162,28 @@ var shape = (function() {
 			this._btnTop = parseInt(e.target.style.top) + 4;
 			this._btnLeft = parseInt(e.target.style.left) + 4;
 
-			this._onBtnMouseMove = this._onBtnMouseMove.bind(this);
-			this._onBtnMouseUp = this._onBtnMouseUp.bind(this);
-
 			document.addEventListener('mousemove', this._onBtnMouseMove);
 			document.addEventListener('mouseup', this._onBtnMouseUp);
 		},
 		_onBtnMouseMove : function(e) {
-			var diffX = event.pageX - this._startBtnX, diffY = event.pageY - this._startBtnY;
-			// 스티커 크기 조절  
-			e.target.parentElement.firstChild.width = this._imgWidth + diffX;
-			e.target.parentElement.firstChild.height = this._imgHeight + diffY;
-			// 스티커 테두리 크기 조절 
-			this.element.style.width = (this._conWidth + diffX) +'px';
-			this.element.style.height = (this._conHeight + diffY) +'px';
-			// 사이즈 조절 버튼 위치 조절 
-			e.target.style.left = this._btnLeft + diffX + 'px';
-			e.target.style.top = this._btnTop + diffY + 'px';
+			if(e.target === e.target.parentNode.querySelector(".size_btn")) { 
+				var diffX = event.pageX - this._startBtnX, diffY = event.pageY - this._startBtnY;
+				// 스티커 크기 조절  
+				e.target.parentElement.firstChild.width = this._imgWidth + diffX;
+				e.target.parentElement.firstChild.height = this._imgHeight + diffY;
+				// 스티커 테두리 크기 조절 
+				this.element.style.width = (this._conWidth + diffX) +'px';
+				this.element.style.height = (this._conHeight + diffY) +'px';
+				// 사이즈 조절 버튼 위치 조절 
+				e.target.style.left = this._btnLeft + diffX + 'px';
+				e.target.style.top = this._btnTop + diffY + 'px';
+
+			}
+			else {
+				tmp.style.top =  window.event.pageY - parseInt(this.element.style.top) - 4 +'px';
+				tmp.style.left = window.event.pageX - parseInt(this.element.style.left) - 4 + 'px';
+			}
+			
 		},
 		_onBtnMouseUp : function(e) {
 			document.removeEventListener('mousemove', this._onBtnMouseMove);
@@ -191,45 +199,7 @@ var shape = (function() {
 			return this;
 		}
 	}
-	// Square.prototype.setPosition = function(e1, e2) {
-	// };
-
-	// Square.prototype.startDragging = function(e) {
-	// };
-
-	// Square.prototype._onDragStart = function(e) {
-	// };
-
-	// Square.prototype._onMouseMove = function(e) {
-	// };
-
-	// Square.prototype._onMouseUp = function(e) {
-	// };
-
-	// Square.prototype.rotateControll = function(e) {
-	// }
-
-	// Square.prototype._onRotateBtnMouseMove = function(e) {
-	// }
-
-	// Square.prototype._onRotateBtnMouseUp = function(e) {
-	// }
-
-	// Square.prototype.sizeControll = function(e) {
-	// }
-
-	// Square.prototype._onBtnMouseMove = function(e) {
-	// };
-
-	// Square.prototype._onBtnMouseUp = function(e) {
-	// };
-
-	// Square.prototype.positionEnd = function(e) {
-	// }
-
-	// Square.prototype.setParent = function(parent) {
-	// };
-
+	
 	return {
 		Square : Square
 	};
